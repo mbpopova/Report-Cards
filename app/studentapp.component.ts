@@ -39,27 +39,19 @@ import {StudentCardComponent} from './studentcard.component';
         EnrollmentComponent, 
         NavbarComponent
     ],
-
     template: `
 
- <navbar></navbar>
- <div class="container-fluid">
- 
-  <div class="row">
-          
-    <div class="col-sm-3 col-md-2 sidebar">
-      <students></students>
-     
-    </div>
-  
-    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">       
+      <navbar></navbar>
+      <div class="container-fluid"> 
+        <div class="row">          
+          <div class="col-sm-3 col-md-2 sidebar">
+            <students></students>     
+          </div>  
+          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">       
                  <router-outlet></router-outlet>
-
-     </div>
-
-      
-    </div>
-  </div>
+          </div>      
+         </div>
+        </div>
     `
 })
 

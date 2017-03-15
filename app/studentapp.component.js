@@ -63,7 +63,7 @@ System.register(['angular2/core', './students.component', './grades.component', 
                             enrollment_component_1.EnrollmentComponent,
                             navbar_component_1.NavbarComponent
                         ],
-                        template: "\n\n <navbar></navbar>\n <div class=\"container-fluid\">\n \n  <div class=\"row\">\n          \n    <div class=\"col-sm-3 col-md-2 sidebar\">\n      <students></students>\n     \n    </div>\n  \n    <div class=\"col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main\">       \n                 <router-outlet></router-outlet>\n\n     </div>\n\n      \n    </div>\n  </div>\n    "
+                        template: "\n\n      <navbar></navbar>\n      <div class=\"container-fluid\"> \n        <div class=\"row\">          \n          <div class=\"col-sm-3 col-md-2 sidebar\">\n            <students></students>     \n          </div>  \n          <div class=\"col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main\">       \n                 <router-outlet></router-outlet>\n          </div>      \n         </div>\n        </div>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], StudentappComponent);

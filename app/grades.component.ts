@@ -10,14 +10,11 @@ import {StudentCardComponent} from './studentcard.component';
 
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">    
      <studentcard></studentcard>
-          <h3 class="sub-header">Assignment History</h3>
-
-      
+        <h3 class="sub-header">Assignment History</h3>      
          <div class="table-responsive">
             <table class="table table-striped">
               <thead>
-                <tr>
-    
+                <tr>    
                   <th> Assignment Name:</th>
                   <th>Due Date:</th>
                   <th>Max Score: </th>
@@ -25,20 +22,17 @@ import {StudentCardComponent} from './studentcard.component';
                   <th>Score Earned: </th>
                 </tr>
               </thead>
-              <tbody>
-              
+              <tbody>              
                 <tr *ngFor = "#grade of grades">
                   <td>{{grade.assignmentName }} </td>
                   <td>{{getFormattedDate(grade.dueDate)}} </td>
                   <td> {{grade.maxScore}} </td>
                   <td> {{getFormattedDate(grade.completionDate)}} </td>
-                  <td> {{grade.scoreEarned}} </td>
-          
+                  <td> {{grade.scoreEarned}} </td>          
                 </tr>
                </tbody>
             </table>
-
-            </div>
+          </div>
        
     `,
     providers: [StudentsService, HTTP_PROVIDERS],
@@ -51,9 +45,7 @@ export class GradesComponent {
       
       constructor(
           private _studentsService: StudentsService, 
-          private _routeParams : RouteParams) {
-
-     
+          private _routeParams : RouteParams) {     
       }
 
       ngOnInit() {
@@ -71,9 +63,9 @@ export class GradesComponent {
 }
 
 interface Grades {
- assignmentName: string,
-    dueDate: string,
-    maxScore: number;
-    completionDate: string;
-    scoreEarned: number;
+  assignmentName: string,
+  dueDate: string,
+  maxScore: number;
+  completionDate: string;
+  scoreEarned: number;
 }

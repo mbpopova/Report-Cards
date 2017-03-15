@@ -31,7 +31,6 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                     this.studentId = this._routeParams.get('studentId');
                     this.school = this._routeParams.get('school');
                     this.grade = this._routeParams.get('grade');
-                    // console.log("Getting params: " + this._routeParams.get('firstName'));
                 };
                 StudentCardComponent = __decorate([
                     core_1.Component({

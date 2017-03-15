@@ -30,16 +30,13 @@ export class StudentCardComponent {
     grade: string;
 
     constructor (
-          private _routeParams : RouteParams) {
-      }
+          private _routeParams : RouteParams) {}
 
-       ngOnInit() {
-        this.firstName =  this._routeParams.get('firstName');
-        this.lastName =  this._routeParams.get('lastName');
-        this.studentId =  this._routeParams.get('studentId');
-        this.school = this._routeParams.get('school');
-        this.grade = this._routeParams.get('grade');
-        // console.log("Getting params: " + this._routeParams.get('firstName'));
-      }
-
+    ngOnInit() {
+      this.firstName =  this._routeParams.get('firstName');
+      this.lastName =  this._routeParams.get('lastName');
+      this.studentId =  this._routeParams.get('studentId');
+      this.school = this._routeParams.get('school');
+      this.grade = this._routeParams.get('grade');
+    }
 }

@@ -5,32 +5,34 @@ import {Injectable} from 'angular2/core';
 
 @Injectable()
 export class StudentsService {
+    url: string = "http://interviewapi20170221095727.azurewebsites.net";
+    creds = btoa("authentica:@uth3nt1c@");
+
+    headers: Headers;
+        
     constructor(private _http: Http) {
+        this.headers = new Headers();
+        this.headers.append('Authorization', 'Basic ' +   this.creds);
     }
 
 
    getStudents() {
-        var headers = new Headers();
-        headers.append('Authorization', 'Basic ' +   btoa('authentica:@uth3nt1c@'));
-        return this._http.get("http://interviewapi20170221095727.azurewebsites.net/api/Student/All", {headers})
+        return this._http.get(
+               this.url + "/api/Student/All",  {headers: this.headers})
                 .map(res => res.json());
     }
 
-    getEnrollment(studentId: string) {
-     //   console.log(studentId);
-        var headers = new Headers();
-        headers.append('Authorization', 'Basic ' +   btoa('authentica:@uth3nt1c@'));
-        return this._http.get("http://interviewapi20170221095727.azurewebsites.net/api/Student/EnrollmentHistory?StudentId=" + studentId, {headers})
+    getEnrollment(_studentId: string) {
+        return this._http.get(
+               this.url + "/api/Student/EnrollmentHistory?StudentId=" + _studentId, 
+            {headers: this.headers})
                 .map(res => res.json());
     }
 
-        getGrades(studentId: string) {
-     //   console.log(studentId);
-        var headers = new Headers();
-        headers.append('Authorization', 'Basic ' +   btoa('authentica:@uth3nt1c@'));
-        return this._http.get("http://interviewapi20170221095727.azurewebsites.net/api/Student/AssignmentHistory?StudentId=" + studentId, {headers})
+        getGrades(_studentId: string) {
+        return this._http.get(
+               this.url + "/api/Student/AssignmentHistory?StudentId=" + _studentId,  {headers: this.headers})
                 .map(res => res.json());
     }
-
 
 }

@@ -12,29 +12,25 @@ import {StudentCardComponent} from './studentcard.component';
                 
      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">    
     
-           <studentcard></studentcard>
+       <studentcard></studentcard>
         <h3 class="sub-header">Enrollment History</h3>
          <div class="table-responsive">
             <table class="table table-striped">
               <thead>
-                <tr>
-    
+                <tr>    
                   <th>Entry Date</th>
                   <th>Exit Date</th>
                   <th>Exit Reason </th>
                 </tr>
               </thead>
-              <tbody>
-              
+              <tbody>              
                 <tr *ngFor = "#enrollment of enrollments">
                   <td>{{getFormattedDate(enrollment.entryDate)}}</td>
                   <td>{{getFormattedDate(enrollment.exitDate)}} </td>
-                  <td>{{enrollment.exitReason}}</td>
-          
+                  <td>{{enrollment.exitReason}}</td>          
                 </tr>
                </tbody>
-            </table>
-
+             </table>
             </div>
     
     `,

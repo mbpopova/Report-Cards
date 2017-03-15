@@ -14,14 +14,12 @@ import {StudentCardComponent} from './studentcard.component';
     
     <div class = "row">
           <ul class="nav nav-sidebar" *ngFor = "#student of students">        
-
             <li>
-        
-                <div class="btn-group"> 
+             <div class="btn-group"> 
                 <!--<span class="caret"></span>--> 
                 <button type="button" 
                         class="btn btn-default dropdown-toggle " 
-                        style = "height:25px;   width:250px;   text-align:left;"
+                        style = "height:30px;   width:250px;   text-align:left;"
                         data-toggle="dropdown" 
                         aria-haspopup="true" 
                         aria-expanded="false"
@@ -30,8 +28,7 @@ import {StudentCardComponent} from './studentcard.component';
                              >
                    {{student.firstName}} {{student.lastName}} 
                    
-                </button>
-                
+                </button>                
                 <ul class="dropdown-menu">
                     <li><a [routerLink]="['Grades', 
                         {
@@ -45,19 +42,20 @@ import {StudentCardComponent} from './studentcard.component';
                         </a>
                     </li>
                     <li><a [routerLink]="['Enrollment',
-                    {
+                       {
                             studentId : student.studentId, 
                             firstName : student.firstName, 
                             lastName : student.lastName,
                             school : student.schoolName,
                             grade : student.grade
                         }
-                        ]">Enrollment Hist  </a> </li>
-                </ul>
-                </div>
-            </li>
-          </ul>
-        </div>
+                        ]">Enrollment Hist  </a> 
+                    </li>
+                   </ul>
+                 </div>
+                </li>
+               </ul>
+             </div>
     `
   
 })

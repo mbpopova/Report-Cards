@@ -30,7 +30,5 @@ import {Component} from 'angular2/core';
     `,
     styleUrls: ['dashboard.css']
 })
-export class NavbarComponent {
-
-}
+export class NavbarComponent {}
 

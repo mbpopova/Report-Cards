@@ -25,25 +25,21 @@ System.register(['angular2/http', 'rxjs/add/operator/map', 'angular2/core'], fun
             StudentsService = (function () {
                 function StudentsService(_http) {
                     this._http = _http;
+                    this.url = "http://interviewapi20170221095727.azurewebsites.net";
+                    this.creds = btoa("authentica:@uth3nt1c@");
+                    this.headers = new http_1.Headers();
+                    this.headers.append('Authorization', 'Basic ' + this.creds);
                 }
                 StudentsService.prototype.getStudents = function () {
-                    var headers = new http_1.Headers();
-                    headers.append('Authorization', 'Basic ' + btoa('authentica:@uth3nt1c@'));
-                    return this._http.get("http://interviewapi20170221095727.azurewebsites.net/api/Student/All", { headers: headers })
+                    return this._http.get(this.url + "/api/Student/All", { headers: this.headers })
                         .map(function (res) { return res.json(); });
                 };
-                StudentsService.prototype.getEnrollment = function (studentId) {
-                    //   console.log(studentId);
-                    var headers = new http_1.Headers();
-                    headers.append('Authorization', 'Basic ' + btoa('authentica:@uth3nt1c@'));
-                    return this._http.get("http://interviewapi20170221095727.azurewebsites.net/api/Student/EnrollmentHistory?StudentId=" + studentId, { headers: headers })
+                StudentsService.prototype.getEnrollment = function (_studentId) {
+                    return this._http.get(this.url + "/api/Student/EnrollmentHistory?StudentId=" + _studentId, { headers: this.headers })
                         .map(function (res) { return res.json(); });
                 };
-                StudentsService.prototype.getGrades = function (studentId) {
-                    //   console.log(studentId);
-                    var headers = new http_1.Headers();
-                    headers.append('Authorization', 'Basic ' + btoa('authentica:@uth3nt1c@'));
-                    return this._http.get("http://interviewapi20170221095727.azurewebsites.net/api/Student/AssignmentHistory?StudentId=" + studentId, { headers: headers })
+                StudentsService.prototype.getGrades = function (_studentId) {
+                    return this._http.get(this.url + "/api/Student/AssignmentHistory?StudentId=" + _studentId, { headers: this.headers })
                         .map(function (res) { return res.json(); });
                 };
                 StudentsService = __decorate([
