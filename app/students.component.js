@@ -42,6 +42,9 @@ System.register(['angular2/core', './students.service', 'angular2/http', 'angula
                 StudentsComponent.prototype.isActive = function (_studentId) {
                     this.clickedStudentId = _studentId;
                 };
+                StudentsComponent.prototype.getStudent = function (studentId) {
+                    return this.students[1];
+                };
                 StudentsComponent = __decorate([
                     core_1.Component({
                         selector: "students",

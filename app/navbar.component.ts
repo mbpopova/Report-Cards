@@ -21,9 +21,7 @@ import {Component} from 'angular2/core';
             <li><a href="#">Profile</a></li>
             <li><a href="#">Help</a></li>
           </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
+       
         </div>
       </div>
     </nav>

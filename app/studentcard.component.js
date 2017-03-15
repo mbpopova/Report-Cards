@@ -29,14 +29,14 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                     this.firstName = this._routeParams.get('firstName');
                     this.lastName = this._routeParams.get('lastName');
                     this.studentId = this._routeParams.get('studentId');
-                    this.school = this._routeParams.get('school');
-                    this.grade = this._routeParams.get('grade');
+                    this.school = decodeURIComponent(this._routeParams.get('school'));
+                    this.grade = decodeURIComponent(this._routeParams.get('grade'));
                 };
                 StudentCardComponent = __decorate([
                     core_1.Component({
                         selector: "studentcard",
                         template: "\n     <h1 class=\"page-header\">{{lastName}}, {{firstName}}</h1>\n          <div class=\"row placeholders\"> \n            <div class=\"col-xs-6 col-sm-3 placeholder\">             \n              <img src=\"./images/Student1{{studentId}}.jpg\"\n                        width=\"100\" height=\"100\" \n                        class=\"img-responsive\" \n                                  />\n              <div> <span class=\"text-muted\">{{school}} </span></div>\n              <div> <span class=\"text-muted\">{{grade}} </span></div>\n            </div>\n          </div>\n    ",
-                        styleUrls: ['dashboard.css'],
+                        styleUrls: ['dashboard.css']
                     }), 
                     __metadata('design:paramtypes', [router_1.RouteParams])
                 ], StudentCardComponent);

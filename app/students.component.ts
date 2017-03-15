@@ -2,7 +2,6 @@ import {Component} from 'angular2/core';
 import {StudentsService} from './students.service';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
-import {StudentCardComponent} from './studentcard.component';
 
 
 @Component({
@@ -77,10 +76,14 @@ export class StudentsComponent {
       isActive(_studentId: number) {
           this.clickedStudentId = _studentId;
       }
+
+      getStudent(studentId: number) {
+          return this.students[1];
+      }
 }
 
 
-interface Student {
+export interface Student {
    studentId: string;
    firstName: string;
    lastName: string;
