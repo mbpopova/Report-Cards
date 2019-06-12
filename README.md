@@ -1,1 +1,1 @@
-Demo single page app written in Angular 2 and Bootstrap. 
+Demo single page application written in Angular 2 and Bootstrap. 
